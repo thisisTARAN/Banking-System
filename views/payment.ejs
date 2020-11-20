@@ -1,0 +1,41 @@
+<%- include("header") -%>
+
+          <div class="container-fluid bar">
+
+            <div class='float-left'>
+        
+        <h2><i class="far fa-clock"></i>Welcome back  :- <u><%=userWhoWantToPay.name%></u></h2>
+            </div>
+            <div class='float-right'>
+                <h4>Saving Account</h4>
+                <h6>Available Balance:<%=userWhoWantToPay.balance%></h6>
+            </div>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Customer-ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Balance</th>
+                <th scope="col">Transact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% fullList.forEach(function(user) { %>
+                <tr>
+                    <th scope="row" ><%= user.customer_id %></th>
+                    <td><%= user.name %></td>
+                    <td class="disp"><%= user.email %></td>
+                    <td>₹ <%= user.balance %></td>
+                    <td>
+                      <form action="/transaction/<%=user.customer_id %>/<%=userWhoWantToPay.customer_id%>" method="POST">
+                        <input type="number" name="amount" placeholder="Enter Amount">
+                        <button type="submit">send Money</button>
+                      </form>
+                    </td>
+                </tr>
+                <%  }) %>
+            </table>
+      </body>
+</html>

@@ -1,0 +1,22 @@
+body{
+    background-color: #25274d;
+}
+.contact{
+    padding: 4%;
+    height: 400px;
+}
+.col-md-3{
+    background: #ff9b00;
+    padding: 4%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+.col-md-9{
+    background: rgb(245, 245, 245);
+    padding: 3%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+h1{
+    padding: 10%;
+}

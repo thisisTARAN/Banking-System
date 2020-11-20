@@ -1,0 +1,31 @@
+<%- include("header") -%>
+
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Customer-ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Balance</th>
+                <th scope="col">Transact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% fullList.forEach(function(user) { %>
+                <tr>
+                    <th scope="row" ><%= user.customer_id %></th>
+                    <td><%= user.name %></td>
+                    <td class="disp"><%= user.email %></td>
+                    <td>₹ <%= user.balance %></td>
+                    <td>
+                        <form action="/payment/<%=user.customer_id%>" method="POST">
+                            <button class="BUTTON_OZS" type="submit" name='selected'>Pay</button>
+                        </form>
+                    </td>
+                </tr>
+                <%  }) %>
+            </tbody>
+          </table>
+          
+</body>
+</html>
